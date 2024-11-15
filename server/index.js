@@ -50,6 +50,6 @@ app.get("/", (req, res) => {
   res.send("Server is running");
 });
 
-app.listen(process.env.PORT, (req, res) => {
+app.listen(3000, (req, res) => {
   console.log("server is running");
 });

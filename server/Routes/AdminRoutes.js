@@ -198,8 +198,7 @@ router.get("/counts", (req, res) => {
             (SELECT COUNT(*) FROM events) AS eventCount,
             (SELECT COUNT(*) FROM events WHERE schedule >= CURDATE()) AS upeventCount,
             (SELECT COUNT(*) FROM alumnus_bio) AS alumniCount,
-            (SELECT COUNT(*) FROM courses) AS CourseCount,
-            (SELECT SUM(amount_collected) FROM donations) AS TotalDonations;
+            (SELECT COUNT(*) FROM courses) AS CourseCount;
     `;
 
   con.query(sql, (err, result) => {

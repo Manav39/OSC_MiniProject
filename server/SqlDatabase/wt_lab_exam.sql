@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `alumnus_bio`
 --
 
-CREATE TABLE `alumnus_bio` (
+CREATE TABLE IF NOT EXISTS `alumnus_bio` (
   `id` int(30) NOT NULL,
   `name` varchar(255) NOT NULL,
   `gender` varchar(10) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE `alumnus_bio` (
   `connected_to` text NOT NULL,
   `avatar` text NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0= Unverified, 1= Verified',
-  `date_created` date NOT NULL DEFAULT current_timestamp()
+  `date_created` datetime NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -54,14 +54,14 @@ INSERT INTO `alumnus_bio` (`id`, `name`, `gender`, `batch`, `course_id`, `email`
 -- Table structure for table `careers`
 --
 
-CREATE TABLE `careers` (
+CREATE TABLE IF NOT EXISTS `careers` (
   `id` int(30) NOT NULL,
   `company` varchar(250) NOT NULL,
   `location` text NOT NULL,
   `job_title` text NOT NULL,
   `description` text NOT NULL,
   `user_id` int(30) NOT NULL,
-  `date_created` datetime NOT NULL DEFAULT current_timestamp()
+  `date_created` datetime NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -78,7 +78,7 @@ INSERT INTO `careers` (`id`, `company`, `location`, `job_title`, `description`, 
 -- Table structure for table `courses`
 --
 
-CREATE TABLE `courses` (
+CREATE TABLE IF NOT EXISTS `courses` (
   `id` int(30) NOT NULL,
   `course` text NOT NULL,
   `about` text NOT NULL
@@ -98,13 +98,13 @@ INSERT INTO `courses` (`id`, `course`, `about`) VALUES
 -- Table structure for table `events`
 --
 
-CREATE TABLE `events` (
+CREATE TABLE IF NOT EXISTS `events` (
   `id` int(30) NOT NULL,
   `title` varchar(250) NOT NULL,
   `content` text NOT NULL,
   `schedule` datetime NOT NULL,
   `banner` text NOT NULL,
-  `date_created` datetime NOT NULL DEFAULT current_timestamp()
+  `date_created` datetime NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -122,7 +122,7 @@ INSERT INTO `events` (`id`, `title`, `content`, `schedule`, `banner`, `date_crea
 -- Table structure for table `event_commits`
 --
 
-CREATE TABLE `event_commits` (
+CREATE TABLE IF NOT EXISTS `event_commits` (
   `id` int(30) NOT NULL,
   `event_id` int(30) NOT NULL,
   `user_id` int(30) NOT NULL
@@ -142,12 +142,12 @@ INSERT INTO `event_commits` (`id`, `event_id`, `user_id`) VALUES
 -- Table structure for table `forum_comments`
 --
 
-CREATE TABLE `forum_comments` (
+CREATE TABLE IF NOT EXISTS `forum_comments` (
   `id` int(30) NOT NULL,
   `topic_id` int(30) NOT NULL,
   `comment` text NOT NULL,
   `user_id` int(30) NOT NULL,
-  `date_created` datetime NOT NULL DEFAULT current_timestamp()
+  `date_created` datetime NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -164,12 +164,12 @@ INSERT INTO `forum_comments` (`id`, `topic_id`, `comment`, `user_id`, `date_crea
 -- Table structure for table `forum_topics`
 --
 
-CREATE TABLE `forum_topics` (
+CREATE TABLE IF NOT EXISTS `forum_topics` (
   `id` int(30) NOT NULL,
   `title` varchar(250) NOT NULL,
   `description` text NOT NULL,
   `user_id` int(30) NOT NULL,
-  `date_created` datetime NOT NULL DEFAULT current_timestamp()
+  `date_created` datetime NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -186,11 +186,11 @@ INSERT INTO `forum_topics` (`id`, `title`, `description`, `user_id`, `date_creat
 -- Table structure for table `gallery`
 --
 
-CREATE TABLE `gallery` (
+CREATE TABLE IF NOT EXISTS `gallery` (
   `id` int(30) NOT NULL,
   `image_path` varchar(255) NOT NULL,
   `about` text NOT NULL,
-  `created` datetime NOT NULL DEFAULT current_timestamp()
+  `created` datetime NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -209,7 +209,7 @@ INSERT INTO `gallery` (`id`, `image_path`, `about`, `created`) VALUES
 -- Table structure for table `system_settings`
 --
 
-CREATE TABLE `system_settings` (
+CREATE TABLE IF NOT EXISTS `system_settings` (
   `id` int(30) NOT NULL,
   `name` text NOT NULL,
   `email` varchar(200) NOT NULL,
@@ -231,7 +231,7 @@ INSERT INTO `system_settings` (`id`, `name`, `email`, `contact`, `cover_img`, `a
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(30) NOT NULL,
   `name` text NOT NULL,
   `email` varchar(100) NOT NULL,
