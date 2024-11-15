@@ -1,12 +1,12 @@
-# Alumni Management System (Alumni-SERN) 
+# Alumni Management System - OSC Mini Project
 
 Welcome to the **Alumni Management System** repository! This system is designed to assist universities/colleges in managing their alumni data effectively. The system consists of two main components: frontend and server.
 
-## 🎯 Project Overview 
+## 🎯 Project Overview
 
 The Alumni Management System has been developed with the following key features:
 
-- **👨‍💼 Admin Side**: 
+- **👨‍💼 Admin Side**:
   - **Login Page**: The page where system admin will submit their system credential to access and manage the system data.
   - **Home Page**: The page where the admin user will be redirected by clicking on the navbar dropdown after logging into the alumni management system admin side. This page displays the summary or total counts of alumni, posted jobs, forum topics, and upcoming events.
   - **Gallery Page**: The page where the admin user will manage the gallery images and data for the website.
@@ -17,7 +17,6 @@ The Alumni Management System has been developed with the following key features:
   - **Forum Page**: The page where all forum topics are listed along with the count of comments if this topic is being shown.
   - **User Page**: The page where an admin user manages the system users.
   <!-- - **System Settings Page**: The page where an admin setup or manages the institute information to be shown on the website. -->
-  
 - **🎓 Alumni Side**:
   - **Home Page**: The default page where the user will be redirected when browsing the website and after logging in. This page shows the list of upcoming events.
   - **Signup Page**: The page where the unregistered alumnus/alumni submit their credentials.
@@ -50,7 +49,7 @@ To set up the Alumni Management System locally, follow these steps:
 4. Import the `wt_lab_exam.sql` file into your SQL database.
 5. Configure the server to connect to your database.
 6. Start the frontend and backend servers with these commands: `npm run dev` in `frontend` and `npm start` in `server` folder.
-   
+
 ![image6](https://github.com/Manav39/Alumni-Management-System/assets/90371681/b9032048-1bfe-4983-a6b0-abcbb478171c)
 
 ![image1](https://github.com/Manav39/Alumni-Management-System/assets/90371681/efaf5698-eaec-4d0f-a4c6-3d482a1fb938)
@@ -82,4 +81,3 @@ To set up the Alumni Management System locally, follow these steps:
 ![image15](https://github.com/Manav39/Alumni-Management-System/assets/90371681/34288df7-ce23-402c-9ae9-83c4e74075d7)
 
 ![image16](https://github.com/Manav39/Alumni-Management-System/assets/90371681/8805bbc8-7671-450f-aaeb-581595e98816)
-
