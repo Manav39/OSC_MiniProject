@@ -35,6 +35,7 @@ const AdminHome = () => {
     jobs: 0,
     upevents: 0,
     events: 0,
+    amountDonated: 0,
   });
 
   useEffect(() => {
@@ -42,6 +43,7 @@ const AdminHome = () => {
       .get("http://localhost:3000/auth/counts")
       .then((res) => {
         console.log("Counts data:", res.data);
+        console.log("amount Donated:", res.data.amountDonated);
         setCounts(res.data);
       })
       .catch((err) => {
@@ -82,7 +84,7 @@ const AdminHome = () => {
               />
               <InfoCard
                 title="Amount Donated <span>| Total</span>"
-                count={counts.donate}
+                count={counts.amountDonated}
                 Icon={FaRupeeSign}
                 className="purple-card"
               />
